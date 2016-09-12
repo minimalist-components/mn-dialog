@@ -6,7 +6,7 @@ let body = document.querySelector('body');
 
 trigger.addEventListener('click', toggle);
 body.addEventListener('click', hideDialog);
-document.onkeyup = escapeKeyUp;
+document.addEventListener('keyup', escapeKeyUp);
 setMotionBlur();
 
 function toggle() {
@@ -37,10 +37,7 @@ function setMotionBlur() {
   let blur = document.querySelector('#motion-blur'); // the blur filter
   let blurFilter = blur.firstElementChild;
 
-  let lastPos = {
-    left: dialog.offsetLeft,
-    top: dialog.offsetTop,
-  };//$element.offset();
+  let lastPos = getOffset(dialog);
   let multiplier = 0.25;
 
   updateMotionBlur();
@@ -49,12 +46,18 @@ function setMotionBlur() {
     blurFilter.setAttribute('stdDeviation', `${x},${y}`);
   }
 
+  function getOffset (el) {
+    const box = el.getBoundingClientRect();
+
+    return {
+      top: box.top + window.pageYOffset - document.documentElement.clientTop,
+      left: box.left + window.pageXOffset - document.documentElement.clientLeft
+    };
+  }
+
   function updateMotionBlur() {
     // get the current position of the element
-    let currentPos = {
-      left: dialog.offsetLeft,
-      top: dialog.offsetTop,
-    };// $element.offset();
+    let currentPos = getOffset(dialog);
 
     // calculate the changes from the last frame and apply the multiplier
     let xDiff = Math.abs(currentPos.left - lastPos.left) * multiplier;
