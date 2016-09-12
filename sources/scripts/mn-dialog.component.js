@@ -6,12 +6,32 @@ let dialog = document.querySelector('.mn-dialog');
 let body = document.querySelector('body');
 
 trigger.addEventListener('click', toggle);
-dialog.addEventListener('click', toggle);
+body.addEventListener('click', hideDialog);
+document.onkeyup = escapeKeyUp;
 setMotionBlur();
 
 function toggle() {
   body.classList.toggle('mn-dialog-opened');
   dialog.classList.toggle('opened');
+}
+
+function close() {
+  body.classList.remove('mn-dialog-opened');
+  dialog.classList.remove('opened');
+}
+
+function hideDialog(event) {
+  if (event.target.classList.contains('mn-dialog-opened')) {
+    close();
+  }
+}
+
+function escapeKeyUp(event) {
+  let esc = event.keyCode === 27;
+  let dialogOpened = body.classList.contains('mn-dialog-opened');
+  if (esc && dialogOpened) {
+    close();
+  }
 }
 
 function setMotionBlur() {
