@@ -1,4 +1,3 @@
-/* globals $ */
 'use strict';
 
 let trigger = document.querySelector('.toggle-dialog');
@@ -38,8 +37,10 @@ function setMotionBlur() {
   let blur = document.querySelector('#motion-blur'); // the blur filter
   let blurFilter = blur.firstElementChild;
 
-  let $element = $('.mn-dialog');
-  let lastPos = $element.offset();
+  let lastPos = {
+    left: dialog.offsetLeft,
+    top: dialog.offsetTop,
+  };//$element.offset();
   let multiplier = 0.25;
 
   updateMotionBlur();
@@ -50,7 +51,10 @@ function setMotionBlur() {
 
   function updateMotionBlur() {
     // get the current position of the element
-    let currentPos = $element.offset();
+    let currentPos = {
+      left: dialog.offsetLeft,
+      top: dialog.offsetTop,
+    };// $element.offset();
 
     // calculate the changes from the last frame and apply the multiplier
     let xDiff = Math.abs(currentPos.left - lastPos.left) * multiplier;
