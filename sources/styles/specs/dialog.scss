@@ -1,0 +1,31 @@
+.mn-dialog {
+  background: red;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  transform: translateY(100vh);
+  transition: transform .4s ease, visibility .41s;
+  visibility: hidden;
+
+  &.opened {
+    visibility: visible;
+    transition: transform .4s ease;
+  }
+
+  @media (max-width: 768px) {
+    transform: translateY(100vh);
+
+    &.opened {transform: translateY(0)}
+  }
+
+  @media (min-width: 768px) {
+    width: 450px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100vh);
+
+    &.opened {transform: translate(-50%, -50%)}
+  }
+}
