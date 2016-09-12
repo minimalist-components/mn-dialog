@@ -1,12 +1,17 @@
 'use strict';
 
-let trigger = document.querySelector('.toggle-dialog');
+let buttons = document.querySelectorAll('[data-toggle-dialog]');
 let dialog = document.querySelector('.mn-dialog');
 let body = document.querySelector('body');
 
-trigger.addEventListener('click', toggle);
+// events
+Array
+  .from(buttons)
+  .forEach(button => button.addEventListener('click', toggle));
 body.addEventListener('click', hideDialog);
 document.addEventListener('keyup', escapeKeyUp);
+
+// init motion blur
 setMotionBlur();
 
 function toggle() {

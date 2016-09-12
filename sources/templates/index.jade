@@ -7,14 +7,18 @@ html
     body {
       font-family: 'Open Sans', sans-serif;
       -webkit-font-smoothing: antialiased;
-    } 
+    }
 body
   h1 Minimalist dialog
 
   div
     include ../imgs/filter.svg
-    button.toggle-dialog Show dialog
-  .mn-dialog mn-dialog content
+    button(data-toggle-dialog) Show dialog
+  .mn-dialog
+    header
+      h2 Title of dialog
+      span.zmdi.zmdi-close.zmdi-hc-2x(data-toggle-dialog)
+    mn-dialog content
   
   script(src='mn-dialog.js')
 

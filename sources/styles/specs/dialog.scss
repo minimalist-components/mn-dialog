@@ -11,6 +11,8 @@
   visibility: hidden;
   z-index: 100;
   filter: url('#motion-blur');
+  box-sizing: border-box;
+  padding: 10px;
 
   &.opened {
     visibility: visible;
