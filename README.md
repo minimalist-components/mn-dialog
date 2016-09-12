@@ -2,7 +2,7 @@
 
 Minimalist dialog component, agnostic to framworks.
 
-<!-- See the [demo](http://codepen.io/darlanmendonca/full/xEwkaz) -->
+See the [demo](http://codepen.io/darlanmendonca/full/JRGoxv)
 
 <!-- [![preview demo](https://raw.githubusercontent.com/minimalist-components/mn-dialog/master/sources/example/mn-dialog.gif)](http://codepen.io/darlanmendonca/full/akgXQq)  -->
 
