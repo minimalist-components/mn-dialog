@@ -1,0 +1,18 @@
+{
+  "name": "mn-dialog",
+  "version": "0.0.1",
+  "description": "Just a dialog component",
+  "main": [
+    "dist/mn-dialog.css",
+    "dist/mn-dialog.js",
+    "sources/styles/mn-dialog.scss"
+  ],
+  "authors": [
+    "Darlan Mendonça <darlanmendonca@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "mn-palette-color": "0.0.1"
+  }
+}
