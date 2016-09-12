@@ -1,6 +1,7 @@
 .mn-dialog {
-  background: url('http://tympanus.net/Tutorials/MotionBlurEffect/img/1.jpg');
-  background-size: cover;
+  // background: url('http://tympanus.net/Tutorials/MotionBlurEffect/img/1.jpg');
+  // background-size: cover;
+  background-color: white;
   position: fixed;
   top: 0; left: 0;
   width: 100vw;
@@ -8,6 +9,8 @@
   transform: translateY(100vh);
   transition: transform .2s ease, visibility .21s;
   visibility: hidden;
+  z-index: 100;
+  filter: url('#motion-blur');
 
   &.opened {
     visibility: visible;
@@ -27,6 +30,9 @@
     left: 50%;
     transform: translate(-50%, 100vh);
     transition: transform .3s ease, visibility .31s;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
+      0 1px 1px 0 rgba(0, 0, 0, .14),
+      0 2px 1px -1px rgba(0, 0, 0, .12);
 
     &.opened {
       transform: translate(-50%, -50%);

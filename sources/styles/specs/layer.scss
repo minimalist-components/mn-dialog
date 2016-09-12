@@ -1,0 +1,21 @@
+body {
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 0;
+    transition: opacity .3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+}
+
+body.mn-dialog-opened {
+  &:before {
+    opacity: 1;
+    pointer-events: all;
+  }
+}

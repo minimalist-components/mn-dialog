@@ -1,19 +1,17 @@
 /* globals $ */
 'use strict';
 
-let trigger = document.querySelector('.show-dialog');
+let trigger = document.querySelector('.toggle-dialog');
 let dialog = document.querySelector('.mn-dialog');
+let body = document.querySelector('body');
 
-trigger.addEventListener('click', showDialog);
-dialog.addEventListener('click', hideDialog);
+trigger.addEventListener('click', toggle);
+dialog.addEventListener('click', toggle);
 setMotionBlur();
 
-function showDialog() {
-  dialog.classList.add('opened');
-}
-
-function hideDialog() {
-  dialog.classList.remove('opened');
+function toggle() {
+  body.classList.toggle('mn-dialog-opened');
+  dialog.classList.toggle('opened');
 }
 
 function setMotionBlur() {
