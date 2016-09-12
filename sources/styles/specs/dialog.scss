@@ -5,12 +5,12 @@
   width: 100vw;
   height: 100vh;
   transform: translateY(100vh);
-  transition: transform .4s ease, visibility .41s;
+  transition: transform .2s ease, visibility .21s;
   visibility: hidden;
 
   &.opened {
     visibility: visible;
-    transition: transform .4s ease;
+    transition: transform .2s ease;
   }
 
   @media (max-width: 768px) {
@@ -25,7 +25,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, 100vh);
+    transition: transform .3s ease, visibility .31s;
 
-    &.opened {transform: translate(-50%, -50%)}
+    &.opened {
+      transform: translate(-50%, -50%);
+      transition: transform .3s ease;
+    }
   }
 }
