@@ -18,5 +18,5 @@ Or just download the main files ```dist/mn-dialog.css, dist/mn-dialog.js``` in y
 
 ```html
 <link rel="stylesheet" href="path/to/dist/mn-dialog.css">
-<script src="path/to/dist/mn-dialog.css"></script>
+<script src="path/to/dist/mn-dialog.js"></script>
 ```
