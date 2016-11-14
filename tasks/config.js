@@ -10,6 +10,7 @@ module.exports = {
     watch: './sources/styles/**/*.scss',
     dest: './dist/',
     sourcemaps: '/sources/styles',
+    output: 'mn-dialog.css',
   },
   scripts: {
     src: [
@@ -17,6 +18,7 @@ module.exports = {
       '!./sources/**/*.spec.js',
     ],
     dest: './dist/',
+    output: 'mn-dialog.js',
   },
   lintScripts: [
     './gulpfile.js',
