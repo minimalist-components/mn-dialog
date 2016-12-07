@@ -17,6 +17,8 @@ body {
 }
 
 body.mn-dialog-opened {
+  overflow: hidden;
+
   &:before {
     opacity: 1;
     pointer-events: all;

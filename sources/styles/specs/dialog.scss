@@ -1,38 +1,20 @@
 mn-dialog {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 100;
-  width: 100vw;
   visibility: hidden;
   box-sizing: border-box;
-  transform: translateY(100vh);
-  transition: transform .2s ease, visibility .21s;
-  will-change: transform;
+  -webkit-overflow-scrolling: touch;
+
+
+  display: flex;
+  overflow: auto;
 
   &.opened {
     visibility: visible;
     z-index: 101;
-    transition: transform .2s ease;
-  }
-
-  @media (max-width: 768px) {
-    transform: translateY(100vh);
-    height: 100vh;
-    border-radius: 0 !important;
-
-    &.opened {transform: translateY(0)}
-  }
-
-  @media (min-width: 768px) {
-    max-width: 600px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 100vh);
-    transition: transform .3s ease, visibility .31s;
-
-    &.opened {
-      transform: translate(-50%, -50%);
-      transition: transform .3s ease;
-    }
   }
 }

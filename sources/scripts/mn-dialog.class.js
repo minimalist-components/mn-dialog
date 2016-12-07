@@ -17,7 +17,6 @@ class MnDialog extends HTMLElement {
       .filter(cardClass)
       // assign classes to card
       .forEach(cssClass => {
-        console.log(cssClass)
         this.classList.remove(cssClass)
         card.classList.add(cssClass)
       })
@@ -94,7 +93,7 @@ class MnDialog extends HTMLElement {
   close(event) {
     event.stopPropagation()
     const clickButtonClose = event.target.getAttribute('data-close-dialog')
-    const clickOutside = event.target.tagName === 'BODY' && event.target.classList.contains('mn-dialog-opened')
+    const clickOutside = event.target.tagName === 'MN-DIALOG'
 
     if (clickButtonClose || clickOutside) {
       const dialog = document.querySelector('mn-dialog.opened')
