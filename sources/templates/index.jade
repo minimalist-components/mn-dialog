@@ -13,12 +13,20 @@ body
   h1 Minimalist dialog
 
   div
-    button(data-toggle-dialog) Show dialog
+    button(data-open-dialog) Show first dialog
+    button(data-open-dialog='dialog1') Show dialog 1
+    button(data-open-dialog='dialog2') Show dialog 2
 
-  .mn-dialog.mn-card.padding-header
+  .mn-dialog.mn-card.padding-header#dialog1
     header
-      h2 Title of dialog
-      span.zmdi.zmdi-close.zmdi-hc-2x(data-toggle-dialog)
+      h2 Title of dialog 1
+      span.zmdi.zmdi-close.zmdi-hc-2x(data-close-dialog)
+    div content
+
+  .mn-dialog.mn-card.padding-header#dialog2
+    header
+      h2 Title of dialog 2
+      span.zmdi.zmdi-close.zmdi-hc-2x(data-close-dialog)
     div content
   
   script(src='mn-dialog.js')
