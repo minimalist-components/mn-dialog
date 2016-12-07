@@ -17,6 +17,7 @@ mn-dialog {
   @media (max-width: 768px) {
     transform: translateY(100vh);
     height: 100vh;
+    border-radius: 0 !important;
 
     &.opened {transform: translateY(0)}
   }
