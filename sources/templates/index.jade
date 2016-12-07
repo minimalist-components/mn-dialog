@@ -2,6 +2,7 @@ html
   meta(name='viewport' content='width=device-width, user-scalable=no')
   link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css')
   link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans')
+  link(rel='stylesheet' href='vendor.css')
   link(rel='stylesheet' href='mn-dialog.css')
   style.
     body {
@@ -14,7 +15,7 @@ body
   div
     button(data-toggle-dialog) Show dialog
 
-  .mn-dialog.padding-header
+  .mn-dialog.mn-card.padding-header
     header
       h2 Title of dialog
       span.zmdi.zmdi-close.zmdi-hc-2x(data-toggle-dialog)

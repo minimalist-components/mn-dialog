@@ -1,8 +1,7 @@
 .mn-dialog {
-  background-color: white;
-  z-index: 100;
   position: fixed;
   top: 0; left: 0;
+  z-index: 100;
   width: 100vw;
   visibility: hidden;
   box-sizing: border-box;
@@ -27,9 +26,6 @@
     left: 50%;
     transform: translate(-50%, 100vh);
     transition: transform .3s ease, visibility .31s;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2),
-      0 1px 1px 0 rgba(0, 0, 0, .14),
-      0 2px 1px -1px rgba(0, 0, 0, .12);
 
     &.opened {
       transform: translate(-50%, -50%);
