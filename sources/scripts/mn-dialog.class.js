@@ -1,9 +1,47 @@
 class MnDialog extends HTMLElement {
   constructor(self) {
     self = super(self)
+    this.setCard()
     this.setOpenEvents()
     this.setCloseEvents()
     return self
+  }
+
+  setCard() {
+    const card = document.createElement('div')
+
+    card.classList.add('mn-card')
+
+    Array
+      .from(this.classList)
+      .filter(cardClass)
+      // assign classes to card
+      .forEach(cssClass => {
+        console.log(cssClass)
+        this.classList.remove(cssClass)
+        card.classList.add(cssClass)
+      })
+
+    Array
+      .from(this.children)
+      .forEach(putInCard)
+
+    function putInCard(element) {
+      card.appendChild(element)
+    }
+
+    this.insertBefore(card, this.firstChild)
+
+    function cardClass(cssClass) {
+      const validClasses = [
+        'padding-header',
+        'padding'
+      ]
+
+      const isValidClass = validClasses.indexOf(cssClass) > -1
+
+      return isValidClass
+    }
   }
 
   setOpenEvents() {
