@@ -22,7 +22,18 @@ function open(event) {
 
   let dialog = document.querySelector(`.mn-dialog${id}`)
   body.classList.add('mn-dialog-opened')
-  dialog.classList.add('opened')
+
+  closePrevious(() => {
+    dialog.classList.add('opened')
+  })
+}
+
+function closePrevious(callback) {
+  let dialog = document.querySelector('.mn-dialog.opened')
+  if (dialog) {
+    dialog.classList.remove('opened')
+  }
+  callback()
 }
 
 function close() {
