@@ -7,6 +7,7 @@ mn-dialog {
   box-sizing: border-box;
   transform: translateY(100vh);
   transition: transform .2s ease, visibility .21s;
+  will-change: transform;
 
   &.opened {
     visibility: visible;
