@@ -45,7 +45,7 @@ class MnDialog extends HTMLElement {
 
   setOpenEvents() {
     const id = this.id
-    const buttons = document.querySelectorAll(`button[data-open-dialog="${id}"]`)
+    const buttons = document.querySelectorAll(`button[open-dialog="${id}"]`)
     let openDialog = this.open
 
     Array
@@ -58,7 +58,7 @@ class MnDialog extends HTMLElement {
   }
 
   setCloseEvents() {
-    const buttons = document.querySelectorAll('[data-close-dialog]')
+    const buttons = document.querySelectorAll('[close-dialog]')
     const close = this.close
 
     Array
@@ -78,7 +78,7 @@ class MnDialog extends HTMLElement {
   }
 
   open() {
-    const id = event.target.getAttribute('data-open-dialog')
+    const id = event.target.getAttribute('open-dialog')
     let dialog = document.querySelector(`mn-dialog#${id}`)
 
     document.body.classList.add('mn-dialog-visible')
@@ -92,7 +92,7 @@ class MnDialog extends HTMLElement {
 
   close(event) {
     event.stopPropagation()
-    const clickButtonClose = event.target.getAttribute('data-close-dialog')
+    const clickButtonClose = event.target.getAttribute('close-dialog')
     const clickOutside = event.target.tagName === 'MN-DIALOG'
 
     if (clickButtonClose || clickOutside) {
