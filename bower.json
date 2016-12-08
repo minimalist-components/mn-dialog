@@ -4,8 +4,7 @@
   "description": "Just a dialog component",
   "main": [
     "dist/mn-dialog.css",
-    "dist/mn-dialog.js",
-    "sources/styles/mn-dialog.scss"
+    "dist/mn-dialog.js"
   ],
   "authors": [
     "Darlan Mendonça <darlanmendonca@gmail.com>"
