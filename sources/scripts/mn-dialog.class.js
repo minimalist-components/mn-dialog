@@ -68,11 +68,11 @@ class MnDialog extends HTMLElement {
     document.body.addEventListener('click', close)
     document.addEventListener('keyup', () => {
       const esc = event.keyCode === 27
-      let isOpened = document.body.classList.contains('mn-dialog-opened')
-      if (esc && isOpened) {
-        const dialog = document.querySelector('mn-dialog.opened')
-        document.body.classList.remove('mn-dialog-opened')
-        dialog.classList.remove('opened')
+      let isVisible = document.body.classList.contains('mn-dialog-visible')
+      if (esc && isVisible) {
+        const dialog = document.querySelector('mn-dialog.visible')
+        document.body.classList.remove('mn-dialog-visible')
+        dialog.classList.remove('visible')
       }
     })
   }
@@ -81,13 +81,13 @@ class MnDialog extends HTMLElement {
     const id = event.target.getAttribute('data-open-dialog')
     let dialog = document.querySelector(`mn-dialog#${id}`)
 
-    document.body.classList.add('mn-dialog-opened')
+    document.body.classList.add('mn-dialog-visible')
 
-    const previousDialog = document.querySelector('mn-dialog.opened')
+    const previousDialog = document.querySelector('mn-dialog.visible')
     if (previousDialog) {
-      previousDialog.classList.remove('opened')
+      previousDialog.classList.remove('visible')
     }
-    dialog.classList.add('opened')
+    dialog.classList.add('visible')
   }
 
   close(event) {
@@ -96,9 +96,9 @@ class MnDialog extends HTMLElement {
     const clickOutside = event.target.tagName === 'MN-DIALOG'
 
     if (clickButtonClose || clickOutside) {
-      const dialog = document.querySelector('mn-dialog.opened')
-      document.body.classList.remove('mn-dialog-opened')
-      dialog.classList.remove('opened')
+      const dialog = document.querySelector('mn-dialog.visible')
+      document.body.classList.remove('mn-dialog-visible')
+      dialog.classList.remove('visible')
     }
   }
 }

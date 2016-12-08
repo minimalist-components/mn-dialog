@@ -13,7 +13,7 @@ mn-dialog {
   display: flex;
   overflow: auto;
 
-  &.opened {
+  &.visible {
     visibility: visible;
     z-index: 101;
   }

@@ -16,7 +16,7 @@ body {
   }
 }
 
-body.mn-dialog-opened {
+body.mn-dialog-visible {
   overflow: hidden;
 
   &:before {

@@ -17,7 +17,7 @@ mn-dialog {
     }
   }
 
-  &.opened .mn-card {
+  &.visible .mn-card {
     transform: translateY(0)
   }
 }
