@@ -14,9 +14,4 @@ With bower
 bower install --save mn-dialog
 ```
 
-Or just download the main files ```dist/mn-dialog.css, dist/mn-dialog.js``` in your project, and make a reference to their, like:
-
-```html
-<link rel="stylesheet" href="path/to/dist/mn-dialog.css">
-<script src="path/to/dist/mn-dialog.js"></script>
-```
+Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-dialog/tree/master/dist)
