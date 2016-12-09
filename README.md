@@ -8,8 +8,6 @@ See the [demo](http://codepen.io/darlanmendonca/full/JRGoxv)
 
 ### Install
 
-With bower
-
 ```sh
 bower install --save mn-dialog
 ```
