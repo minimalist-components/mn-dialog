@@ -1,4 +1,4 @@
-# Minimalist dialog
+# mn-dialog
 
 Minimalist dialog component, agnostic to framworks.
 
