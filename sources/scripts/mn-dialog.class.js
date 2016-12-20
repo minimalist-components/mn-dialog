@@ -77,9 +77,16 @@ class MnDialog extends HTMLElement {
     })
   }
 
-  open() {
-    const id = event.target.getAttribute('open-dialog')
-    let dialog = document.querySelector(`mn-dialog#${id}`)
+  open(event) {
+    let id
+    let dialog
+
+    if (event) {
+      id = event.target.getAttribute('open-dialog')
+      dialog = document.querySelector(`mn-dialog#${id}`)
+    } else {
+      dialog = this
+    }
 
     document.body.classList.add('mn-dialog-visible')
 
@@ -91,11 +98,17 @@ class MnDialog extends HTMLElement {
   }
 
   close(event) {
-    event.stopPropagation()
-    const clickButtonClose = event.target.getAttribute('close-dialog')
-    const clickOutside = event.target.tagName === 'MN-DIALOG'
+    if (event) {
+      event.stopPropagation()
+      const clickButtonClose = event.target.getAttribute('close-dialog')
+      const clickOutside = event.target.tagName === 'MN-DIALOG'
 
-    if (clickButtonClose || clickOutside) {
+      if (clickButtonClose || clickOutside) {
+        const dialog = document.querySelector('mn-dialog.visible')
+        document.body.classList.remove('mn-dialog-visible')
+        dialog.classList.remove('visible')
+      }
+    } else {
       const dialog = document.querySelector('mn-dialog.visible')
       document.body.classList.remove('mn-dialog-visible')
       dialog.classList.remove('visible')
