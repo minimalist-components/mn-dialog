@@ -116,4 +116,4 @@ class MnDialog extends HTMLElement {
   }
 }
 
-customElements.define('mn-dialog', MnDialog)
+window.customElements.define('mn-dialog', MnDialog)
