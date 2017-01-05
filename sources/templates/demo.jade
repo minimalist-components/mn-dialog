@@ -7,34 +7,37 @@ html
     link(rel='stylesheet' href='dist/mn-dialog.css')
 
   style.
-    mn-dialog {
-      font-size: 1.2rem;
-    }
 
-    form {width: 100%}
+    mn-dialog h2 {font-weight: normal}
 
-    @media (min-width: 600px) {
-      form {
-        padding: 100px;
-        box-sizing: border-box;
-      }
-    }
 body
   h2 mn-dialog
   include github-corner
 
   .layout-fullscreen.layout-centered
     .layout-container
-      div
-        button(open-dialog='dialog1') Show dialog 1
-        button(open-dialog='dialog2') Show dialog 2
+      div.layout-row.align-center
+        button.mn-button(open-dialog='dialog1') Show dialog 1
+        button.mn-button(open-dialog='dialog2') Show dialog 2
 
   mn-dialog.padding-header#dialog1
     header
       h2 Title of dialog 1
-      span.zmdi.zmdi-close.zmdi-hc-2x(close-dialog)
-    div content
-      button(open-dialog='dialog2') Show dialog 2
+    .mn-table-list
+      a.mn-item(href='' close-dialog)
+        span John Snow
+        span iknownothing@snow.com
+
+      a.mn-item(href='' close-dialog)
+        span Daenerys Targaryen
+        span motherofdragons@targaryens.com
+
+      a.mn-item(href='' close-dialog)
+        span Tyrion Lannister
+        span theimp@lannisters.com
+        
+    //- .layout-row.align-end
+      button.mn-button(open-dialog='dialog2') Show dialog 2
 
   mn-dialog.padding-header#dialog2
     header
@@ -87,14 +90,16 @@ body
   block scripts
     script(src='docs/vendor.js')
     script(src='dist/mn-dialog.js')
-  //- script.
-    var form = document.querySelector('form')
-    form.setAttribute('novalidate', 'novalidate')
-    form.addEventListener('submit', submit)
 
-    function submit(event) {
-      form.classList.add('submitted')
+  script.
+    var links = document.querySelectorAll('mn-dialog a[href]')
+    Array
+        .from(links)
+        .forEach(function(link) {
+          link.addEventListener('click', preventDefault)
+        })
+
+    function preventDefault(event) {
       event.preventDefault()
-      console.log('valid', form.checkValidity())
     }
 
