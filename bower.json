@@ -1,6 +1,6 @@
 {
   "name": "mn-dialog",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Just a dialog component",
   "main": [
     "dist/mn-dialog.css",

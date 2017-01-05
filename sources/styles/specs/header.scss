@@ -9,5 +9,9 @@ mn-dialog {
       margin: 0; padding: 0;
       flex: auto;
     }
+
+    @media (min-width: 768px) {
+      button, a {display: none !important}
+    }
   }
 }

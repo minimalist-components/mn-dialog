@@ -9,6 +9,7 @@ html
   style.
 
     mn-dialog h2 {font-weight: normal}
+    .zmdi-close {font-size: 2em}
 
 body
   h2 mn-dialog
@@ -23,6 +24,7 @@ body
   mn-dialog.padding-header#dialog1
     header
       h2 Title of dialog 1
+      button.mn-button.action(close-dialog): .zmdi.zmdi-close
     .mn-table-list
       a.mn-item(href='' close-dialog)
         span John Snow
@@ -42,6 +44,7 @@ body
   mn-dialog.padding#dialog2
     header
       h2 Title of dialog 2
+      button.mn-button.action(close-dialog): .zmdi.zmdi-close
 
     div
       p Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean lacinia bibendum nulla sed consectetur. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
