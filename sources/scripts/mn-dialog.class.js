@@ -46,18 +46,10 @@ class MnDialog extends HTMLElement {
   setOpenEvents() {
     const id = this.id
     const buttons = document.querySelectorAll(`button[open-dialog="${id}"]`)
-    let openDialog = this.open
 
     Array
       .from(buttons)
-      .forEach(setEventListener)
-
-    function setEventListener(button) {
-      button.addEventListener('click', (event) => {
-        openDialog(event)
-        event.stopPropagation()
-      })
-    }
+      .forEach(button => button.addEventListener('click', () => this.open()))
   }
 
   setCloseEvents() {
@@ -84,17 +76,8 @@ class MnDialog extends HTMLElement {
     })
   }
 
-  open(event) {
-    let id
-    let dialog
-
-    if (event) {
-      id = event.target.getAttribute('open-dialog')
-      dialog = document.querySelector(`mn-dialog#${id}`)
-    } else {
-      dialog = this
-    }
-    dialog.scrollTop = 0
+  open() {
+    this.scrollTop = 0
     window.MnBackdrop.show()
     document.body.classList.add('mn-dialog-visible')
 
@@ -102,7 +85,7 @@ class MnDialog extends HTMLElement {
     if (previousDialog) {
       previousDialog.classList.remove('visible')
     }
-    dialog.classList.add('visible')
+    this.classList.add('visible')
   }
 
   close() {
