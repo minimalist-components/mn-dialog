@@ -1,3 +1,7 @@
+[![Bower version](https://badge.fury.io/bo/mn-dialog.svg)](https://badge.fury.io/bo/mn-dialog)
+[![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-dialog.svg)](https://gemnasium.com/github.com/minimalist-components/mn-dialog)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
+
 # mn-dialog
 
 Minimalist dialog component, agnostic to framworks.
