@@ -78,10 +78,10 @@ class MnDialog extends HTMLElement {
       }
     })
 
-    document.addEventListener('click', event => {
-      const clickOutside = !event.target.closest('mn-card')
-
+    this.addEventListener('click', event => {
+      const clickOutside = !event.target.closest('.mn-card')
       if (clickOutside) {
+        // event.stopPropagation()
         this.close()
       }
     })
@@ -112,9 +112,8 @@ class MnDialog extends HTMLElement {
     if (event) {
       // event.stopPropagation()
       const clickButtonClose = event.target.getAttribute('close-dialog')
-      const clickOutside = event.target.tagName === 'MN-DIALOG'
 
-      if (clickButtonClose || clickOutside) {
+      if (clickButtonClose) {
         const dialog = document.querySelector('mn-dialog.visible')
         window.MnBackdrop.hide()
         document.body.classList.remove('mn-dialog-visible')
