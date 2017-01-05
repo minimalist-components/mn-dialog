@@ -97,7 +97,7 @@ class MnDialog extends HTMLElement {
     } else {
       dialog = this
     }
-
+    dialog.scrollTop = 0
     window.MnBackdrop.show()
     document.body.classList.add('mn-dialog-visible')
 
