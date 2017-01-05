@@ -110,7 +110,7 @@ class MnDialog extends HTMLElement {
 
   close(event) {
     if (event) {
-      event.stopPropagation()
+      // event.stopPropagation()
       const clickButtonClose = event.target.getAttribute('close-dialog')
       const clickOutside = event.target.tagName === 'MN-DIALOG'
 
