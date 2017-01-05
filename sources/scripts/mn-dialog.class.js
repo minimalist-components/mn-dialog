@@ -88,6 +88,7 @@ class MnDialog extends HTMLElement {
       dialog = this
     }
 
+    window.MnBackdrop.show()
     document.body.classList.add('mn-dialog-visible')
 
     const previousDialog = document.querySelector('mn-dialog.visible')
@@ -105,11 +106,13 @@ class MnDialog extends HTMLElement {
 
       if (clickButtonClose || clickOutside) {
         const dialog = document.querySelector('mn-dialog.visible')
+        window.MnBackdrop.hide()
         document.body.classList.remove('mn-dialog-visible')
         dialog.classList.remove('visible')
       }
     } else {
       const dialog = document.querySelector('mn-dialog.visible')
+      window.MnBackdrop.hide()
       document.body.classList.remove('mn-dialog-visible')
       dialog.classList.remove('visible')
     }
