@@ -10,7 +10,7 @@
 </mn-code><h3>javascript</h3><p>If you want to use javascript to open or close a mn-dialog, just use these methods, available directly on element, e.g.</p><mn-code class="js">const dialog = document.querySelector('mn-dialog#example')
 dialog.open() // open the dialog
 
-setTimeout(() => {
+setTimeout(function() {
   dialog.close() // close the dialog
 }, 2000) // after 2 seconds :D
 
