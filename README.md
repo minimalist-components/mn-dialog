@@ -38,3 +38,17 @@ finally, to close the button, user can click outside of dialog, or press the key
 <!-- id of dialog dont be required -->
 <button close-dialog>X</button>
 ```
+
+
+### Javascript
+
+If you want use javascript to open or close a mn-dialog, just use this methods, available directly on element, e.g.
+
+```js
+const dialog = document.querySelector('mn-dialog#example')
+dialog.open() // open the dialog
+
+setTimeout(() => {
+  dialog.close() // close the dialog
+}, 2000) // after 2 seconds :D
+```
