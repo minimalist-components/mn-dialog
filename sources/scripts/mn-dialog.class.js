@@ -53,7 +53,10 @@ class MnDialog extends HTMLElement {
       .forEach(setEventListener)
 
     function setEventListener(button) {
-      button.addEventListener('click', openDialog)
+      button.addEventListener('click', (event) => {
+        openDialog(event)
+        event.stopPropagation()
+      })
     }
   }
 
@@ -65,7 +68,6 @@ class MnDialog extends HTMLElement {
       .from(buttons)
       .forEach(button => button.addEventListener('click', close))
 
-    document.body.addEventListener('click', close)
     document.addEventListener('keyup', () => {
       const esc = event.keyCode === 27
       let isVisible = document.body.classList.contains('mn-dialog-visible')
@@ -73,6 +75,14 @@ class MnDialog extends HTMLElement {
         const dialog = document.querySelector('mn-dialog.visible')
         document.body.classList.remove('mn-dialog-visible')
         dialog.classList.remove('visible')
+      }
+    })
+
+    document.addEventListener('click', event => {
+      const clickOutside = !event.target.closest('mn-card')
+
+      if (clickOutside) {
+        this.close()
       }
     })
   }
@@ -112,9 +122,11 @@ class MnDialog extends HTMLElement {
       }
     } else {
       const dialog = document.querySelector('mn-dialog.visible')
-      window.MnBackdrop.hide()
-      document.body.classList.remove('mn-dialog-visible')
-      dialog.classList.remove('visible')
+      if (dialog) {
+        window.MnBackdrop.hide()
+        document.body.classList.remove('mn-dialog-visible')
+        dialog.classList.remove('visible')
+      }
     }
   }
 }
