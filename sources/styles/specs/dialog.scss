@@ -7,12 +7,14 @@ mn-dialog {
   z-index: 100;
   visibility: hidden;
   box-sizing: border-box;
-  padding: 1.5em;
   -webkit-overflow-scrolling: touch;
-
 
   display: flex;
   overflow: auto;
+
+  @media (min-width: 768px) {
+    padding: 0 1.5em;
+  }
 
   &.visible {
     visibility: visible;
