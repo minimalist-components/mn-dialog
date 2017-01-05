@@ -62,24 +62,22 @@ class MnDialog extends HTMLElement {
 
   setCloseEvents() {
     const buttons = document.querySelectorAll('[close-dialog]')
-    const close = this.close
 
     Array
       .from(buttons)
-      .forEach(button => button.addEventListener('click', close))
+      .forEach(button => button.addEventListener('click', () => this.close()))
 
     document.addEventListener('keyup', () => {
       const esc = event.keyCode === 27
-      let isVisible = document.body.classList.contains('mn-dialog-visible')
-      if (esc && isVisible) {
-        const dialog = document.querySelector('mn-dialog.visible')
-        document.body.classList.remove('mn-dialog-visible')
-        dialog.classList.remove('visible')
+
+      if (esc) {
+        this.close()
       }
     })
 
     this.addEventListener('click', event => {
       const clickOutside = !event.target.closest('.mn-card')
+
       if (clickOutside) {
         this.close()
       }
@@ -107,25 +105,10 @@ class MnDialog extends HTMLElement {
     dialog.classList.add('visible')
   }
 
-  close(event) {
-    if (event) {
-      // event.stopPropagation()
-      const clickButtonClose = event.target.getAttribute('close-dialog')
-
-      if (clickButtonClose) {
-        const dialog = document.querySelector('mn-dialog.visible')
-        window.MnBackdrop.hide()
-        document.body.classList.remove('mn-dialog-visible')
-        dialog.classList.remove('visible')
-      }
-    } else {
-      const dialog = document.querySelector('mn-dialog.visible')
-      if (dialog) {
-        window.MnBackdrop.hide()
-        document.body.classList.remove('mn-dialog-visible')
-        dialog.classList.remove('visible')
-      }
-    }
+  close() {
+    window.MnBackdrop.hide()
+    document.body.classList.remove('mn-dialog-visible')
+    this.classList.remove('visible')
   }
 }
 
