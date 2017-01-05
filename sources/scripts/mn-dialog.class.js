@@ -81,7 +81,6 @@ class MnDialog extends HTMLElement {
     this.addEventListener('click', event => {
       const clickOutside = !event.target.closest('.mn-card')
       if (clickOutside) {
-        // event.stopPropagation()
         this.close()
       }
     })
