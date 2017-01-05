@@ -17,6 +17,6 @@
     "mn-backdrop": "^0.0.2"
   },
   "devDependencies": {
-    "mn-gh-page": "0.0.10"
+    "mn-gh-page": "^0.0.11"
   }
 }
