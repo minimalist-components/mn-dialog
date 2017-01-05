@@ -13,3 +13,28 @@ bower install --save mn-dialog
 ```
 
 Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-dialog/tree/master/dist)
+
+### Usage
+
+Add to your html, the tag `mn-dialog` and assign to it an `id`, e.g.
+
+```html
+<mn-dialog id="example">
+  <!-- here goes the content of your dialog -->
+</mn-dialog>
+```
+
+and to open this dialog, you can add to any element (we suggest a button), the attibute `open-dialog` with id as value, e.g.
+
+```html
+<!-- when click in the button, dialog will be opened -->
+<button open-dialog="example">Open dialog</button>
+```
+
+
+finally, to close the button, user can click outside of dialog, or press the key `esc`, but if you can add to another element, use the attribute `close-dialog`, e.g.
+
+```html
+<!-- id of dialog dont be required -->
+<button close-dialog>X</button>
+```
