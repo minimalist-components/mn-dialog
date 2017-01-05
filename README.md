@@ -42,7 +42,7 @@ finally, to close the button, user can click outside of dialog, or press the key
 
 ### Javascript
 
-If you want to use javascript to open or close a mn-dialog, just use this methods, available directly on element, e.g.
+If you want to use javascript to open or close a mn-dialog, just use these methods, available directly on element, e.g.
 
 ```js
 const dialog = document.querySelector('mn-dialog#example')
