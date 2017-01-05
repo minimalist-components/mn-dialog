@@ -59,7 +59,7 @@ class MnDialog extends HTMLElement {
       .from(buttons)
       .forEach(button => button.addEventListener('click', () => this.close()))
 
-    document.addEventListener('keyup', () => {
+    document.addEventListener('keyup', event => {
       const esc = event.keyCode === 27
 
       if (esc) {
