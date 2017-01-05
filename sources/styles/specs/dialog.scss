@@ -13,7 +13,7 @@ mn-dialog {
   overflow: auto;
 
   @media (min-width: 768px) {
-    padding: 0 1.5em;
+    padding: 1.5em 0;
   }
 
   &.visible {
