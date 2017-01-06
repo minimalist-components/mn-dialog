@@ -56,3 +56,19 @@ setTimeout(() => {
   dialog.close() // close the dialog
 }, 2000) // after 2 seconds :D
 ```
+
+
+### disable click outside
+
+In desktop, maybe you want disable click outside closing, you can do this, adding a class `.disable-click-outside`, e.g.
+
+```html
+<mn-dialog id="example" class="disable-click-outside"></mn-dialog>
+```
+
+and, if you have a lot of dialogs, and want disable all, just define in javascript, using the method `.clickOutside()`, e.g.
+
+```js
+MnCode.clickOutside(false) // disable
+```
+
