@@ -7,6 +7,19 @@ class MnDialog extends HTMLElement {
     return self
   }
 
+  static clickOutside(value) {
+    const dialogs = document.querySelectorAll('mn-dialog')
+    this.clickOutsideDisabled = !value
+
+    Array
+      .from(dialogs)
+      .forEach(dialog => {
+        this.clickOutsideDisabled
+          ? dialog.classList.add('disable-click-outside')
+          : dialog.classList.remove('disable-click-outside')
+      })
+  }
+
   setCard() {
     const card = document.createElement('div')
 
@@ -69,8 +82,9 @@ class MnDialog extends HTMLElement {
 
     this.addEventListener('click', event => {
       const clickOutside = !event.target.closest('.mn-card')
+      const clickOutsideDisabled = this.classList.contains('disable-click-outside')
 
-      if (clickOutside) {
+      if (clickOutside && !clickOutsideDisabled) {
         this.close()
       }
     })

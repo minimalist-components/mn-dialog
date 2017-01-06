@@ -7,14 +7,18 @@ mn-dialog {
       flex: auto;
     }
 
+  }
+
+  &:not(.disable-click-outside) {
     @media (min-width: 768px) {
-      button, a {display: none !important}
+      & > button[close-dialog]:first-of-type,
+      header button[close-dialog] {display: none !important}
     }
   }
 
-  button[close-dialog]:first-of-type,
+  & > button[close-dialog]:first-of-type,
   header button[close-dialog] {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     right: 0;
   }
