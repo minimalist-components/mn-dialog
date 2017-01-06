@@ -33,7 +33,7 @@ class MnDialog extends HTMLElement {
 
     function cardClass(cssClass) {
       const validClasses = [
-        'padding-header',
+        'padding-title',
         'padding'
       ]
 

@@ -14,4 +14,11 @@ mn-dialog {
       button, a {display: none !important}
     }
   }
+
+  button[close-dialog]:first-of-type,
+  header button[close-dialog] {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
