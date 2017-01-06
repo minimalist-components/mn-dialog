@@ -96,6 +96,17 @@ body
         dialog.close() // close the dialog
       }, 2000) // after 2 seconds :D
 
+    h3 disable click outside
+    p In desktop, maybe you want disable click outside closing, you can do this, adding a class <strong>.disable-click-outside</strong>, e.g.
+
+    mn-code.html.
+      <mn-dialog id="example" class="disable-click-outside"></mn-dialog>
+
+    p and, if you have a lot of dialogs, and want disable all, just define in javascript, using the method <strong>.clickOutside()</strong>, e.g.
+
+    mn-code.js.
+      MnCode.clickOutside(false) // disable
+
 
   block scripts
     script(src='docs/vendor.js')

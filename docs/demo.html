@@ -14,6 +14,8 @@ dialog.open() // open the dialog
 setTimeout(function() {
   dialog.close() // close the dialog
 }, 2000) // after 2 seconds :D
+</mn-code><h3>disable click outside</h3><p>In desktop, maybe you want disable click outside closing, you can do this, adding a class <strong>.disable-click-outside</strong>, e.g.</p><mn-code class="html"><mn-dialog id="example" class="disable-click-outside"></mn-dialog>
+</mn-code><p>and, if you have a lot of dialogs, and want disable all, just define in javascript, using the method <strong>.clickOutside()</strong>, e.g.</p><mn-code class="js">MnCode.clickOutside(false) // disable
 
 </mn-code></div><script src="docs/vendor.js"></script><script src="dist/mn-dialog.js"></script><script>var links = document.querySelectorAll('mn-dialog a[href]')
 Array
