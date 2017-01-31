@@ -1,6 +1,6 @@
-[![Bower version](https://badge.fury.io/bo/mn-dialog.svg)](https://badge.fury.io/bo/mn-dialog)
+[![npm version](https://badge.fury.io/js/mn-dialog.svg)](https://badge.fury.io/js/mn-dialog)
 [![Dependency Status](https://gemnasium.com/badges/github.com/minimalist-components/mn-dialog.svg)](https://gemnasium.com/github.com/minimalist-components/mn-dialog)
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)   
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)  
 
 # mn-dialog
 
@@ -8,15 +8,17 @@ Minimalist dialog component, agnostic to framworks.
 
 See the [demo](https://minimalist-components.github.io/mn-dialog/)
 
-<!-- [![preview demo](https://raw.githubusercontent.com/minimalist-components/mn-dialog/master/sources/example/mn-dialog.gif)](https://minimalist-components.github.io/mn-dialog/)  -->
+<a href="https://minimalist-components.github.io/mn-dialog/">
+<img src="https://raw.githubusercontent.com/minimalist-components/mn-dialog/master/preview.gif">
+</a>
 
 ### Install
 
 ```sh
-bower install --save mn-dialog
+npm install --save mn-dialog
 ```
 
-Or just download the main files, located in [dist/](https://github.com/minimalist-components/mn-dialog/tree/master/dist)
+And bundle dependencies and main files in [dist/](https://github.com/minimalist-components/mn-dialog/tree/master/dist) with your preferred tool.
 
 ### Usage
 
