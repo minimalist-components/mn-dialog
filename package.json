@@ -1,6 +1,6 @@
 {
   "name": "mn-dialog",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "a dialog/modal component",
   "main": "dist/mn-dialog.js",
   "files": [

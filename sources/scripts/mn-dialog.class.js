@@ -112,3 +112,4 @@ class MnDialog extends HTMLElement {
 }
 
 window.customElements.define('mn-dialog', MnDialog)
+window.MnDialog = MnDialog
