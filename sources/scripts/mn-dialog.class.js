@@ -57,21 +57,20 @@ class MnDialog extends HTMLElement {
   }
 
   setOpenEvents() {
-    document.addEventListener('click', (event) => {
-      if (event.target.getAttribute('open-dialog')) {
-        this.open()
-        event.stopPropagation()
-      }
-    })
+    const id = this.id
+    const buttons = document.querySelectorAll(`button[open-dialog="${id}"]`)
+
+    Array
+      .from(buttons)
+      .forEach(button => button.addEventListener('click', () => this.open()))
   }
 
   setCloseEvents() {
-    document.addEventListener('click', (event) => {
-      if (event.target.getAttribute('close-dialog')) {
-        this.close()
-        event.stopPropagation()
-      }
-    })
+    const buttons = document.querySelectorAll('[close-dialog]')
+
+    Array
+      .from(buttons)
+      .forEach(button => button.addEventListener('click', () => this.close()))
 
     document.addEventListener('keyup', event => {
       const esc = event.keyCode === 27
