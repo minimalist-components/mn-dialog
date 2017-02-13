@@ -4,6 +4,7 @@ class MnDialog extends HTMLElement {
     this.setCard()
     this.setOpenEvents()
     this.setCloseEvents()
+
     return self
   }
 
@@ -57,20 +58,21 @@ class MnDialog extends HTMLElement {
   }
 
   setOpenEvents() {
-    const id = this.id
-    const buttons = document.querySelectorAll(`button[open-dialog="${id}"]`)
-
-    Array
-      .from(buttons)
-      .forEach(button => button.addEventListener('click', () => this.open()))
+    document.addEventListener('click', event => {
+      if (event.target.matches(`button[open-dialog="${this.id}"]`)) {
+        this.open()
+        event.stopPropagation()
+      }
+    })
   }
 
   setCloseEvents() {
-    const buttons = document.querySelectorAll('[close-dialog]')
-
-    Array
-      .from(buttons)
-      .forEach(button => button.addEventListener('click', () => this.close()))
+    document.addEventListener('click', event => {
+      if (event.target.matches('button[close-dialog]')) {
+        this.close()
+        event.stopPropagation()
+      }
+    })
 
     document.addEventListener('keyup', event => {
       const esc = event.keyCode === 27

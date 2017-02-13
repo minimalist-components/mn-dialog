@@ -15,11 +15,12 @@ body
   h2 mn-dialog
   include github-corner
 
-  .mn-layout-fullscreen.mn-layout-centered
+  .demo.mn-layout-fullscreen.mn-layout-centered
     .mn-layout-container
       div.mn-layout-row.align-center
         button.mn-button(open-dialog='dialog1') Show dialog 1
         button.mn-button(open-dialog='dialog2') Show dialog 2
+        //- button.mn-button#test add button to dialog 1
 
   mn-dialog.padding-title#dialog1
     header
@@ -123,6 +124,16 @@ body
     function preventDefault(event) {
       event.preventDefault()
     }
+
+    //- document
+    //-     .querySelector('#test')
+    //-     .addEventListener('click', function(event) {
+    //-       var button = document.createElement('button')
+    //-       button.innerHTML = 'test dialog 1 event'
+    //-       button.classList.add('mn-button')
+    //-       button.setAttribute('open-dialog', 'dialog1')
+    //-       document.querySelector('.demo .mn-layout-row').appendChild(button)
+    //-     })
 
     //- MnDialog.clickOutside(false)
 
