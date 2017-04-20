@@ -94,7 +94,7 @@ class MnDialog extends HTMLElement {
 
   open() {
     this.scrollTop = 0
-    window.MnBackdrop.show()
+    window.MnBackdrop.show({target: this})
     document.body.classList.add('mn-dialog-visible')
 
     const previousDialog = document.querySelector('mn-dialog.visible')
@@ -105,7 +105,7 @@ class MnDialog extends HTMLElement {
   }
 
   close() {
-    window.MnBackdrop.hide()
+    window.MnBackdrop.hide({target: this})
     document.body.classList.remove('mn-dialog-visible')
     this.classList.remove('visible')
   }
