@@ -10,6 +10,7 @@ function vendorCSSTask() {
     'mn-gh-page',
     'mn-table-list',
     'mn-button',
+    'mn-select',
   ]
 
   const dependencies = packageFiles(devDependencies)

@@ -8,6 +8,7 @@ gulp.task('vendorJS', vendorJSTask)
 function vendorJSTask() {
   const devDependencies = [
     'mn-gh-page',
+    'mn-select',
   ]
 
   const dependencies = packageFiles(devDependencies)
@@ -17,6 +18,8 @@ function vendorJSTask() {
         ? item.replace('.node.js', '.js')
         : item
     )
+
+  console.log(dependencies)
 
   return gulp
     .src(dependencies)
