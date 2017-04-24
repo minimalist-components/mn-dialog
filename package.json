@@ -1,6 +1,6 @@
 {
   "name": "mn-dialog",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "a dialog/modal component",
   "main": "dist/mn-dialog.js",
   "files": [
@@ -28,7 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "document-register-element": "^1.3.0",
-    "mn-backdrop": "~0.0.4",
+    "mn-backdrop": "~0.0.5",
     "mn-card": "~0.0.3"
   },
   "devDependencies": {
