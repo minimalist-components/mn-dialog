@@ -28,7 +28,7 @@
   "license": "MIT",
   "dependencies": {
     "document-register-element": "^1.3.0",
-    "mn-backdrop": "~0.0.3",
+    "mn-backdrop": "~0.0.4",
     "mn-card": "~0.0.3"
   },
   "devDependencies": {

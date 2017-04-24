@@ -19,8 +19,6 @@ function vendorJSTask() {
         : item
     )
 
-  console.log(dependencies)
-
   return gulp
     .src(dependencies)
     .pipe(concat('vendor.js'))
